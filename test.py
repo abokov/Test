@@ -21,5 +21,7 @@ while True:
                         match+=1
                 if match >= 3:
                     print "Hoster is Microsoft Azure."
+    else:
+        print "Incorrect data! Please, type again."
                     
                             
