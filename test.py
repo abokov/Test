@@ -1,10 +1,8 @@
 import xml.etree.ElementTree as ET
-tree = ET.parse('ip_ranges.xml')
-root = tree.getroot()
-control = 0
-while True:
+def ip_check(ip,filename):
+    tree = ET.parse(str(filename))
+    root = tree.getroot()
     ip_correct = 0
-    ip = raw_input('Enter IP to find a host: ')
     for i in range (0,len(ip.split('.'))):
         if len(ip.split('.'))==4 and ip.split('.')[i].isdigit():
             ip_correct += 1
@@ -23,5 +21,10 @@ while True:
                     print "Hoster is Microsoft Azure."
     else:
         print "Incorrect data! Please, type again."
+        
+ip = raw_input('Enter IP to find a host: ')
+ip_check(ip,'ip_ranges.xml')
+
+
                     
                             
